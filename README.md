@@ -1,6 +1,6 @@
 # Lanzou-DirectLink
 
-获取蓝奏云直链，目前仅支持无密码!
+获取蓝奏云直链
 
 # Description(介绍)
 
