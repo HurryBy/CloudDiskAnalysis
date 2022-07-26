@@ -1,0 +1,47 @@
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.formLogin .row{
+		margin: 0px 0px;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	.formLogin .row{
+		margin: 0px 0px;
+	}
+	.checkbox{
+		font-size: 12px;
+	}
+	.formLogin .text-right a{
+		font-size: 12px;
+	}
+}
+@media (max-width: 767px) {
+	.text-right {
+		text-align: left !important;
+	}
+}
+@media only screen and (min-width: 280px) and (max-width: 575px) {
+	.logo a img{
+		max-width: 140px;
+	}
+	.formLogin .form-group .form-control{
+		min-height: 45px;
+	}
+	.formLogin .form-group i{
+		font-size: 29px;
+	}
+	.text-right {
+		text-align: center !important;
+	}
+	.create-box{
+		font-size: 12px;
+	}
+	.fb{
+		margin-bottom: 10px;
+	}
+	.checkbox{
+		text-align: center;
+	}
+	.text-left {
+		text-align: center !important;
+	}
+}

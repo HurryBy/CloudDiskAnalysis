@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>LanZouCloud解析</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- Material Design Icons CSS -->
+<link rel="stylesheet" href="css/materialdesignicons.css">
+<!-- Bootstrap Checkbox CSS -->
+<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
+<!-- Rippler CSS -->
+<link rel="stylesheet" href="css/rippler.min.css">
+<!-- Style CSS -->
+<link rel="stylesheet" href="css/style.css">
+<!-- Responsive  CSS -->
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<script> 
+	function jiexi(){ 
+		var link = document.getElementById("link").value
+		if(link == ""){
+			alert("链接不能为空!")
+			exit()
+		}
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function(){
+		if (xhr.readyState === 4){
+			if (xhr.status === 200){
+				document.getElementById("result").value = xhr.responseText
+			} else {
+			console.error(xhr.statusText);
+			}
+		}
+		};
+		xhr.onerror = function (e) {
+		console.error(xhr.statusText);
+		};
+		xhr.open('GET', './1.php?link=' + link , true);
+		xhr.send(null);
+	} 
+	</script>
+<div class="container py-2">
+    <div class="row">
+        <div class="col-md-12">
+			<div class="logo">
+				<a href="#">
+					<h1>LanZou Cloud</h1>
+				</a>
+			</div>
+            <div class="row">
+                <div class="col-md-6 login-form mx-auto">
+                    <!-- form card login -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="mb-0"></h3>
+                        </div>
+                        <div class="card-body">
+							<div class="form-group">
+								<input class="form-control" id="link" name="link" placeholder="分享链接" type="text" required="">
+								<input class="form-control" id="result" name="result" placeholder="解析结果" type="text" required="">
+							</div>
+							<div class="row mb-3">
+								<div class="col-lg-12 text-right"><button onclick="jiexi();" class="btn btn-success btn-wd " id="btnLogin"><span>点击解析</span></button></div>
+							</div>
+                        </div>
+                        <!--/card-block-->
+						<!---->
+						<div class="card-footer">
+							<div class="copy-text">Created with <i class="fa fa-heart"></i> by Hurry</div>
+							<a href="https://we.miaovps.com" ><img src="https://we.miaovps.com/static/images/f1.png" width="500" height="300"></a>
+						</div>
+                    </div>
+                    <!-- /form card login -->
+                </div>
+            </div>
+            <!--/row-->
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->
+
+<!-- jquery latest version -->
+<script src="js/jquery.min.js"></script>
+<!-- popper.min.js -->
+<script src="js/popper.min.js"></script>    
+<!-- bootstrap js -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Jquery Rippler js -->
+<script src="js/jquery.rippler.min.js"></script>	
+<!-- script js -->
+<script src="js/script.js"></script>
+</body>
+</html>

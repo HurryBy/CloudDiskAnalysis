@@ -31,4 +31,4 @@ pip install requests
 
 我花费了很少的精力，如果你想让这个软件传播的更广，麻烦点个 Star，谢谢！
 
-网页版测试网站: http://8.142.116.37:12345/
+网页版测试网站: http://wgame.miaovps.com:32022/

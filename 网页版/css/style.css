@@ -1,0 +1,356 @@
+/*
+	Author       : html.design
+	Template Name: Cloud Login Form Responsive Widget Template
+	Version      : 1.0
+*/
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,500i,700,700i');
+
+
+body{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Ubuntu', sans-serif;
+	background: url(../images/bg-1.png) center;
+	background-size: cover;
+}
+html {  
+	-ms-overflow-style: scrollbar; 
+}
+.alltrans,
+a, 
+input[type="button"], 
+input[type="submit"], 
+button, 
+table th, 
+table td,
+.navigation-menu > li > a span:after,
+.btn,
+.btn:after,
+.section-title:after,
+.service-icon,
+.owl-dot,
+.owl-nav > div,
+.blog-img img,
+.owl-nav > div:before,
+.portfolio-box:after,
+.portfolio-box img,
+.portfolio-content {	
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+a {
+	color: #e52225;
+	text-decoration: none;
+}
+a:hover, 
+a:focus {
+	color: #e52225;
+	outline: none;
+	text-decoration: underline;
+}
+.link-dark {
+	color: #0f0f0f;	
+}
+.link-dark:hover, .link-dark:focus {
+	color: #e52225;
+	text-decoration: none;
+}
+@media screen and (-ms-high-contrast:active), (-ms-high-contrast:none) {
+a:active {
+	background-color: transparent;
+}
+}
+strong {
+	font-weight: 700;
+}
+small, 
+.small {
+	font-size: 85%;
+}
+sub, 
+sup {
+	font-size: 80%
+}
+p {
+	margin: 0 0 20px;
+}
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+	line-height: 1.3;
+	margin: 0 0 15px;
+	font-weight: 700;
+	color: #0f0f0f;
+	text-transform: capitalize;
+	font-family: 'Ubuntu', sans-serif;
+}
+h1, 
+h2 {
+	font-size: 60px;
+}
+h3 {
+	font-size: 30px;
+	font-weight: 600;
+}
+h4 {
+	font-size: 24px;
+	font-weight: 600;
+}
+h5 {
+	font-size: 22px;
+	margin-bottom: 10px;
+	font-weight: 600;
+}
+h6 {
+	font-size: 18px;
+	margin-bottom: 10px;
+	font-weight: 600;
+}
+
+/*--- login ---*/
+
+.logo{
+	text-align: center;
+	margin-bottom: 20px;
+}
+.logo a{
+	display: inline-block;
+}
+.logo a:hover{
+	text-decoration: none;
+}
+.logo a h1{
+	font-size: 42px;
+	margin: 0px;
+	color: #ffffff;
+}
+.login-form .card{
+	border: none;
+	border-radius: 5px;	
+	border: 3px solid #ffffff;
+}
+.login-form .card .card-header{
+	text-align: center;
+	background: #27293d;
+	border-color: #27293d;	
+}
+.login-form .card .card-header h3{
+	color: #ffffff;
+	font-weight: 500;
+	font-size: 24px;
+}
+.form-check-label{
+	position: relative;
+}
+.login-form .card .card-footer{
+	text-align: center;
+	background: #27293d;
+	border-color: #27293d;
+	color: #ffffff;
+}
+.formLogin .form-check-label{
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	padding-left: 25px;
+	line-height: 18px;
+	margin-bottom: 0;
+	transition: color .3s linear;
+}
+.formLogin .form-check-label input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+	box-sizing: border-box;
+	padding: 0;
+}
+.formLogin .form-check-label .form-check-sign::before, .formLogin .form-check-label .form-check-sign::after {
+    content: " ";
+    display: inline-block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    left: 0;
+    cursor: pointer;
+    border-radius: 3px;
+    top: 0;
+    border: 1px solid #818181;
+    transition: opacity .3s linear;
+}
+
+.formLogin .form-check-label .form-check-sign::after {
+    font-family: "Material Design Icons";
+    content: "\F12C";
+    top: 0;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0;
+    color: #fff;
+    font-weight: 600;
+    border: 0;
+    background-color: inherit;
+}
+
+.formLogin .form-check-label input[type="checkbox"] + .form-check-sign::after{
+	opacity: 0;
+	font-size: 10px;
+	margin-top: 0;
+}
+.formLogin .form-check-label input[type="checkbox"]:checked + .form-check-sign::after {
+    opacity: 1;
+    font-size: 10px;
+    margin-top: 0;
+}
+.formLogin .form-group .form-control{
+	min-height: 50px;
+	padding: 12px 12px 12px 45px;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.formLogin .form-group .form-control:focus{
+	border: 1px solid #00b4ff;
+	box-shadow: none;
+}
+.formLogin .form-group.addcolor i{
+	color: #00b4ff;
+}
+.formLogin .form-group{
+	position: relative;
+}
+.formLogin .form-group i{
+	position: absolute;
+	left: 12px;
+	top: 0px;
+	font-size: 34px;
+	color: #cccccc;
+	line-height: 50px;
+}
+.formLogin .text-left a{
+	color: #222222;
+	text-transform: capitalize;
+}
+.formLogin .text-left a:hover{
+	color: #00b4ff;
+	text-decoration: none;
+}
+.formLogin .btn-wd{
+	background: #00b4ff;
+	border-color: #00b4ff;
+	display: inline-block;
+	border-width: 1px;
+	border-radius: 50px;
+	padding: 10px 16px;
+	min-width: 180px;
+}
+.copy-text{
+	font-size: 14px;
+}
+.copy-text a{
+	color: #00b4ff;
+}
+.naw-text{
+	padding: 5px 0px;
+	position: relative;
+	text-align: center;
+}
+.naw-text:before{
+	content: "";
+	background: #00b4ff;
+	height: 1px;
+	position: absolute;
+	width: 100%;
+	top: 18px;
+	left: 0px;
+}
+.naw-text h5{
+	font-size: 12px;
+	text-align: center;
+	font-weight: normal;
+	margin: 0px;
+	position: relative;
+	display: inline-block;
+	background: #ffffff;
+	padding: 0px 5px; 
+}
+.create-box{
+	color: #212121;
+	font-size: 15px;
+}
+.create-box a{
+	color: #00b4ff;
+}
+
+.fb{
+	background: #3B5998;
+	border-color: #3B5998;
+	font-size: 20px;
+	border-radius: 50px;
+	padding: 10px 16px;
+}
+.fb:hover{
+	background: #00b4ff;
+	border-color: #00b4ff;
+}
+.gp{
+	background: #DD4B39;
+	border-color: #DD4B39;
+	font-size: 20px;
+	border-radius: 50px;
+	padding: 10px 16px;
+}
+.gp:hover{
+	background: #00b4ff;
+	border-color: #00b4ff;
+}
+.hover-btn{
+	display: inline-block;
+	text-align: center;
+	position: relative;
+}
+.hover-btn span{
+	position: relative;
+	z-index: 1;
+}
+.hover-btn:before, .hover-btn:after{
+	width: 4.4em;
+	height: 2.95em;
+	position: absolute;
+	content: "";
+	display: inline-block;
+	background: #00b4ff;
+	border-radius: 50%;
+	-webkit-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+	-webkit-transform: scale(0);
+	transform: scale(0);
+	z-index: -1;
+}
+.hover-btn:before {
+    top: -10%;
+    left: 10%;
+}
+.hover-btn:after {
+    bottom: -10%;
+    right: 10%;
+}
+.hover-btn:hover::before, .hover-btn:hover::after {
+    -webkit-transform: none;
+    transform: none;
+	z-index:0;
+}
+
+
+
+
+
+
