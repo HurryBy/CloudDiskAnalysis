@@ -24,6 +24,7 @@
 <script> 
 	function jiexi(){ 
 		var link = document.getElementById("link").value
+		var password = document.getElementById("password").value
 		if(link == ""){
 			alert("链接不能为空!")
 			exit()
@@ -41,7 +42,7 @@
 		xhr.onerror = function (e) {
 		console.error(xhr.statusText);
 		};
-		xhr.open('GET', './1.php?link=' + link , true);
+		xhr.open('GET', './1.php?link=' + link + "&pwd=" + password, true);
 		xhr.send(null);
 	} 
 	</script>
@@ -63,6 +64,7 @@
                         <div class="card-body">
 							<div class="form-group">
 								<input class="form-control" id="link" name="link" placeholder="分享链接" type="text" required="">
+								<input class="form-control" id="password" name="password" placeholder="密码(可以为空)" type="text" required="">
 								<input class="form-control" id="result" name="result" placeholder="解析结果" type="text" required="">
 							</div>
 							<div class="row mb-3">
