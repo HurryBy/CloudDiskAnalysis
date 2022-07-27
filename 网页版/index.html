@@ -32,6 +32,7 @@
 		}
 		document.getElementById("message").innerHTML = "请稍后..."
 		document.getElementById("redBtn").style = "display:none;"
+		document.getElementById("copyBtn").style = "display:none;"
 		var xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = function(){
 		if (xhr.readyState === 4){
@@ -40,6 +41,7 @@
 				downloadLink = xhr.responseText
 				if(downloadLink.search("http") != -1){
 				    document.getElementById("redBtn").style = ""
+				    document.getElementById("copyBtn").style = ""
 				    document.getElementById("message").innerHTML = "解析完毕!"
 				}else{
 				    document.getElementById("message").innerHTML = "解析错误"
@@ -60,6 +62,21 @@
 	}
 	function red(){
 	    location.href=downloadLink;
+	}
+	function copy(){
+	    var link = document.getElementById("link").value
+		var password = document.getElementById("password").value
+        var textarea = document.createElement('textarea');
+        document.body.appendChild(textarea);
+        textarea.style.position = 'absolute';
+        textarea.style.clip = 'rect(0 0 0 0)';
+        textarea.value = 'http://wgame.miaovps.com:32022/1.php?link='+ link + "&pwd=" + password + "&red=114514";
+        textarea.select();
+        document.execCommand('copy', true);
+        document.getElementById("message").innerHTML = "复制成功!"
+        setTimeout(function(){
+                    document.getElementById("message").innerHTML = "欢迎使用"
+                }, 1500)
 	}
 	</script>
 <div class="container py-2">
@@ -85,6 +102,7 @@
 							</div>
 							<div class="row mb-3">
 							    <div class="col-lg-12 text-right"><button onclick="red();" style="display:none;"class="btn btn-success btn-wd " id="redBtn"><span>点击下载</span></button></div>
+							    <div class="col-lg-12 text-right"><button onclick="copy();" style="display:none;"class="btn btn-success btn-wd " id="copyBtn"><span>点击复制跳转链接</span></button></div>
 								<div class="col-lg-12 text-right"><button onclick="jiexi();" class="btn btn-success btn-wd " id="btnLogin"><span>点击解析</span></button></div>
 							</div>
                         </div>
