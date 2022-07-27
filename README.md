@@ -32,3 +32,5 @@ pip install requests
 我花费了精力，如果你想让这个项目传播的更广，麻烦点个 Star，谢谢！
 
 网页版测试网站: http://wgame.miaovps.com:32022/
+
+Star过5肝API版本
