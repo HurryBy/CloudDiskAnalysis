@@ -66,7 +66,44 @@ function start($link = 0, $password){
     }
     $curldata = c("https://".$lanzou_prefix.".lanzou".$lanzou.".com/tp/".$lanzou_id, "");
     if(stripos($curldata, '举报文件') == FALSE){
-        return '链接错误';
+        $curldata = c($link, "");
+        if(stripos($curldata, '举报') == TRUE){
+            //就是多文件链接 那么就进行其他操作
+            $ib = zhengze('/ib(.*)\';/', $curldata);
+            $ib = zhengze('/= \'(.*)/', $ib);
+            $ih = zhengze('/ih(.*)\';/', $curldata);
+            $ih = zhengze('/= \'(.*)/', $ih);
+            $fid = zhengze('/\'fid\':(.*),/', $curldata);
+            $uid = zhengze('/\'uid\':\'(.*)\'/', $curldata);
+            $pgs = 1;
+            $post_data = array('lx' => 2, 'fid' => intval($fid), 'uid' => $uid, 'pg' => intval($pgs), 'rep' => '0', 't' => $ib, 'k' => $ih, 'up' => 1, 'ls' => 1, 'pwd' => $password);
+            $postdata = http_build_query($post_data);
+            $options = array('http' => array(
+                'method' => 'POST',
+                'header' => 'Referer: '."https:".$lanzou_prefix.".lanzou".$lanzou.".com/".'\\r\\n' . 'Accept-Language:zh-CN,zh;q=0.9\\r\\n',
+                'content' => $postdata,
+            ));
+            $context = stream_context_create($options);
+            $data = file_get_contents('https://'.$lanzou_prefix.'.lanzou'.$lanzou.'.com/filemoreajax.php', false, $context);
+            $dataa = json_decode($data,true);
+            if($dataa['zt'] != 1){
+                return '多文件密码错误';
+            }
+            $i = 0;
+            while(1){
+                if($dataa['text'][$i]['id'] != NULL){
+                    $result = $result.$dataa['text'][$i]['id'].','.$dataa['text'][$i]['name_all'].';';
+                    //$result = $result + $dataa['text'][$i]['id'].','.$dataa['text'][$i]['name_all'].';';
+                }else{
+                    $result = substr($result,0,strlen($result)-1);
+                    break;
+                }
+                $i = $i + 1;
+            }
+            return $result;
+        }else{
+            return '链接错误';
+        }
     }
     if($password){
         $posign = zhengze('/var posign = (.*)/', $curldata);
@@ -170,8 +207,8 @@ if ($link==NULL) {
 if($redirect == NULL){
     echo $result;
 }else{
-  header("HTTP/1.1 301 Moved Permanently");
-  header('Location: '.$result);
-  exit();
+    header("HTTP/1.1 301 Moved Permanently");
+    header('Location: '.$result);
+    exit();
 }
 ?>

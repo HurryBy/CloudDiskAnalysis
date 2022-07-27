@@ -23,6 +23,28 @@
 <body>
 <script> 
     var downloadLink = '';
+    function jiexi2(id){
+        var link = document.getElementById("link").value
+        var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function(){
+		if (xhr.readyState === 4){
+			if (xhr.status === 200){
+				document.getElementById("link").value = link.substring(0,link.length-xhr.responseText.length) + id
+				document.getElementById("password").value = ''
+				jiexi()
+			} else {
+			console.error(xhr.statusText);
+			}
+		}
+		};
+		xhr.onerror = function (e) {
+		console.error(xhr.statusText);
+		};
+		xhr.open('GET', './id.php?link=' + link, true);
+		xhr.send(null);
+        
+        
+    }
 	function jiexi(){ 
 		var link = document.getElementById("link").value
 		var password = document.getElementById("password").value
@@ -37,19 +59,43 @@
 		xhr.onreadystatechange = function(){
 		if (xhr.readyState === 4){
 			if (xhr.status === 200){
-				document.getElementById("result").value = xhr.responseText
 				downloadLink = xhr.responseText
 				if(downloadLink.search("http") != -1){
+				    document.getElementById("result").value = xhr.responseText
 				    document.getElementById("redBtn").style = ""
 				    document.getElementById("copyBtn").style = ""
 				    document.getElementById("message").innerHTML = "解析完毕!"
+				    document.getElementById("morefilebox").innerHTML = ""
+				    setTimeout(function(){
+                            document.getElementById("message").innerHTML = "欢迎使用"
+                        }, 1500)
 				}else{
-				    document.getElementById("message").innerHTML = "解析错误"
+				    if(downloadLink.search(",") != -1){
+				        //多链接
+				        document.getElementById('morefilebox').innerHTML = "";
+				        result = downloadLink
+				        array = result.split(';')
+                        id = []
+                        name = []
+                        var para = document.createElement("p")
+                        para.innerText = '单击选择文件下载'
+                        morefilebox.appendChild(para)
+                            for(i =0;i<array.length;i++){
+                                var button = document.createElement("button")
+                                button.setAttribute("onclick","jiexi2('"+array[i].split(',')[0]+"');")
+                                button.setAttribute("class","btn btn-success btn-wd")
+                                button.innerText = array[i].split(',')[1] + "\n"
+                                morefilebox.appendChild(button)
+                            }
+				    }
+				    else {
+				        document.getElementById("message").innerHTML = "解析错误"
+                        setTimeout(function(){
+                            document.getElementById("message").innerHTML = "欢迎使用"
+                        }, 1500)
+				    }
 				}
-				setTimeout(function(){
-                    document.getElementById("message").innerHTML = "欢迎使用"
-                }, 1500)
-			} else {
+				
 			console.error(xhr.statusText);
 			}
 		}
@@ -110,6 +156,9 @@
 						<!---->
 						<div class="card-footer">
 							<div class="copy-text">Created with <i class="fa fa-heart"></i> by Hurry <a href="https://www.github.com/HurryBy/lanzou-directlink">项目地址</a></div>
+							<div id="morefilebox">
+							    
+							    </div>
 							    <div class="msg_desc">
                                     <a href="https://we.miaovps.com" ><img style="max-wIDth:100%;overflow:hidden;"  src="https://we.miaovps.com/static/images/f1.png" width="500" height="300"></a>
                                 </div>
