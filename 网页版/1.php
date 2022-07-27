@@ -65,11 +65,14 @@ function start($link = 0, $password){
         $lanzou_id = substr($link,strrpos($link,"/")+1,$length);
     }
     $curldata = c("https://".$lanzou_prefix.".lanzou".$lanzou.".com/tp/".$lanzou_id, "");
+    if(stripos($curldata, '举报文件') == FALSE){
+        return '链接错误';
+    }
     if($password){
         $posign = zhengze('/var posign = (.*)/', $curldata);
         $posign = str_replace("'","",$posign);
         $posign = str_replace(";","",$posign);
-        // 请求网址
+        // 有密码请求网址
         $post_data = array('action' => 'downprocess', 'sign' => $posign, 'p' => $password);
         $postdata = http_build_query($post_data);
         $options = array('http' => array(
@@ -82,6 +85,10 @@ function start($link = 0, $password){
         $data123 = json_decode($data,true);
         $dom = $data123['dom'];
         $url = $data123['url'];
+        $zt = $data123['zt'];
+        if ($zt != 1){
+            return '密码错误';
+        }
         $result = $dom. '/file/' . $url;
         $headers = array(
             'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
@@ -103,7 +110,7 @@ function start($link = 0, $password){
         $url=curl_getinfo($curl);
         curl_close($curl);
         return $url["redirect_url"];
-        // curl会被检测 :(((())))
+        // curl会被检测 :((( 导致出来的结果被加密
         // $post_data = ['action'=>'downprocess','sign'=>$posign,'p'=>$password];
         // $curl = curl_init();
         // curl_setopt($curl, CURLOPT_URL, 'https://'.$lanzou_prefix.'.lanzou'.$lanzou.'.com/ajaxm.php');
@@ -147,8 +154,9 @@ function start($link = 0, $password){
 }
 $link = isset($_GET['link']) ? $_GET['link'] : NULL;
 $password = isset($_GET['pwd']) ? $_GET['pwd'] : NULL;
+$redirect = isset($_GET['red']) ? $_GET['red'] : NULL;
 if ($link==NULL) {
-	echo "蓝奏云解析下载系统：</br>支持外链分享地址(link)解析</br>在链接后面加入?link=你的蓝奏分享链接&pwd=密码(可空)</br>即可";
+	echo "蓝奏云解析下载系统：</br>支持外链分享地址(link)解析</br>在链接后面加入?link=你的蓝奏分享链接&pwd=密码(可空)&red=任意数(可空)[填写任意数代表直接跳转至直链链接,可用于个人站点]</br>即可";
     exit(); 
 }elseif ($link) {   
     $link = str_replace("https://","",$link);
@@ -159,9 +167,11 @@ if ($link==NULL) {
         $result = start($link,NULL);
     }
 }
-if($result){
+if($redirect == NULL){
     echo $result;
 }else{
-    echo 'Error 请前往Gitee/Github提交issue';
+  header("HTTP/1.1 301 Moved Permanently");
+  header('Location: '.$result);
+  exit();
 }
 ?>

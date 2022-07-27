@@ -29,11 +29,16 @@
 			alert("链接不能为空!")
 			exit()
 		}
+		document.getElementById("message").innerHTML = "请稍后..."
 		var xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = function(){
 		if (xhr.readyState === 4){
 			if (xhr.status === 200){
 				document.getElementById("result").value = xhr.responseText
+				document.getElementById("message").innerHTML = "解析完毕!"
+				setTimeout(function(){
+                    document.getElementById("message").innerHTML = "欢迎使用"
+                }, 1500)
 			} else {
 			console.error(xhr.statusText);
 			}
@@ -42,7 +47,7 @@
 		xhr.onerror = function (e) {
 		console.error(xhr.statusText);
 		};
-		xhr.open('GET', './1.php?link=' + link + "&pwd=" + password, true);
+		xhr.open('GET', './1.php?link=' + link + "&pwd=" + password + "&red=", true);
 		xhr.send(null);
 	} 
 	</script>
@@ -59,7 +64,7 @@
                     <!-- form card login -->
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="mb-0"></h3>
+                            <h3 class="mb-0" id="message"></h3>
                         </div>
                         <div class="card-body">
 							<div class="form-group">
@@ -74,8 +79,11 @@
                         <!--/card-block-->
 						<!---->
 						<div class="card-footer">
-							<div class="copy-text">Created with <i class="fa fa-heart"></i> by Hurry</div>
-							<a href="https://we.miaovps.com" ><img src="https://we.miaovps.com/static/images/f1.png" width="500" height="300"></a>
+							<div class="copy-text">Created with <i class="fa fa-heart"></i> by Hurry <a href="https://www.github.com/HurryBy/lanzou-directlink">项目地址</a></div>
+							    <div class="msg_desc">
+                                    <a href="https://we.miaovps.com" ><img style="max-wIDth:100%;overflow:hidden;"  src="https://we.miaovps.com/static/images/f1.png" width="500" height="300"></a>
+                                </div>
+							
 						</div>
                     </div>
                     <!-- /form card login -->
