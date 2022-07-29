@@ -67,7 +67,12 @@ function start($link = 0, $password){
     $curldata = c("https://".$lanzou_prefix.".lanzou".$lanzou.".com/tp/".$lanzou_id, "");
     if(stripos($curldata, '举报文件') == FALSE){
         $curldata = c($link, "");
-        if(stripos($curldata, '举报') == TRUE){
+        $lanzou_prefixfix = "w";
+        $curldata1 = c("https://".$lanzou_prefixfix.".lanzou".$lanzou.'.com/'.$lanzou_id, "");
+        if(stripos($curldata, '举报') == TRUE || stripos($curldata1, '举报') == TRUE){
+            if(stripos($curldata1, '举报') == TRUE){
+                $curldata = $curldata1;
+            }
             //就是多文件链接 那么就进行其他操作
             $ib = zhengze('/ib(.*)\';/', $curldata);
             $ib = zhengze('/= \'(.*)/', $ib);
