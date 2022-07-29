@@ -122,3 +122,5 @@ API 测试网站: http://wgame.miaovps.com:32022/api/api.php
 | 200  | 解析成功            |
 | 201  | 密码错误/请输入密码 |
 | 202  | 链接错误/链接失效   |
+
+**Star过15爆肝TamperMonkey脚本**
