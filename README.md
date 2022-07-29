@@ -49,8 +49,11 @@ API 测试网站: http://wgame.miaovps.com:32022/api/api.php
 ### 请求示例
 
 无密码: `?link=https://wwt.lanzouw.com/inAe108hg9de`
+
 有密码: `?link=https://wwt.lanzouw.com/iKvVt08mqfxa&pwd=ggg2`
+
 直接下载: `?link=https://wwt.lanzouw.com/iKvVt08mqfxa&red=114514`
+
 文件夹分享: `?link=https://wwt.lanzouw.com/b0cmmk8ni&pwd=9m4q`
 
 ### 返回示例
@@ -114,7 +117,7 @@ API 测试网站: http://wgame.miaovps.com:32022/api/api.php
 }
 ```
 
-| code | 返回值              |
+| Code | 返回值              |
 | ---- | ------------------- |
 | 200  | 解析成功            |
 | 201  | 密码错误/请输入密码 |
