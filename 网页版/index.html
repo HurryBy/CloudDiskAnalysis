@@ -25,25 +25,11 @@
     var downloadLink = '';
     function jiexi2(id){
         var link = document.getElementById("link").value
-        var xhr = new XMLHttpRequest();
-		xhr.onreadystatechange = function(){
-		if (xhr.readyState === 4){
-			if (xhr.status === 200){
-				document.getElementById("link").value = link.substring(0,link.length-xhr.responseText.length) + id
-				document.getElementById("password").value = ''
-				jiexi()
-			} else {
-			console.error(xhr.statusText);
-			}
-		}
-		};
-		xhr.onerror = function (e) {
-		console.error(xhr.statusText);
-		};
-		xhr.open('GET', './id.php?link=' + link, true);
-		xhr.send(null);
-        
-        
+        var length = link.lastIndexOf('/') + 1
+		document.getElementById("link").value = link.substring(0,length) + id
+		document.getElementById("password").value = ''
+		document.getElementById("morefilebox").innerHTML = ""
+		jiexi();
     }
 	function jiexi(){ 
 		var link = document.getElementById("link").value
@@ -60,54 +46,55 @@
 		if (xhr.readyState === 4){
 			if (xhr.status === 200){
 				downloadLink = xhr.responseText
-				if(downloadLink.search("http") != -1){
-				    document.getElementById("result").value = xhr.responseText
-				    document.getElementById("redBtn").style = ""
-				    document.getElementById("copyBtn").style = ""
-				    document.getElementById("message").innerHTML = "解析完毕!"
-				    document.getElementById("morefilebox").innerHTML = ""
-				    setTimeout(function(){
-                            document.getElementById("message").innerHTML = "欢迎使用"
-                        }, 1500)
-				}else{
-				    if(downloadLink.search(",") != -1){
-				        //多链接
+				var obj;
+				obj = JSON.parse(downloadLink);
+				if(obj.msg == '解析成功'){
+				    if(typeof(obj.docname) == "undefined"){
+				        document.getElementById("result").value = obj.data.url
+    				    document.getElementById("redBtn").style = ""
+    				    document.getElementById("copyBtn").style = ""
+    				    document.getElementById("message").innerHTML = "解析完毕!"
+    				    document.getElementById("morefilebox").innerHTML = ""
+    				    setTimeout(function(){
+                                document.getElementById("message").innerHTML = "欢迎使用"
+                            }, 1500)
+				    }else{
 				        document.getElementById('morefilebox').innerHTML = "";
-				        result = downloadLink
-				        array = result.split(';')
-                        id = []
-                        name = []
-                        var para = document.createElement("p")
+				        var para = document.createElement("p")
                         para.innerText = '单击选择文件下载'
                         morefilebox.appendChild(para)
-                            for(i =0;i<array.length;i++){
+                        var i = 0;
+                        while(1){
+                            if(typeof(obj.data[i].id) == "undefined"){
+                                break;
+                            }else{
                                 var button = document.createElement("button")
-                                button.setAttribute("onclick","jiexi2('"+array[i].split(',')[0]+"');")
+                                button.setAttribute("onclick","jiexi2('"+obj.data[i].id+"');")
                                 button.setAttribute("class","btn btn-success btn-wd")
-                                button.innerText = array[i].split(',')[1] + "\n"
+                                button.innerText = obj.data[i].name
                                 morefilebox.appendChild(button)
                             }
+                            i = i + 1;
+                        }
 				    }
-				    else {
+				}else {
 				        document.getElementById("message").innerHTML = "解析错误"
                         setTimeout(function(){
                             document.getElementById("message").innerHTML = "欢迎使用"
                         }, 1500)
 				    }
 				}
-				
-			console.error(xhr.statusText);
+				console.error(xhr.statusText);
 			}
-		}
 		};
 		xhr.onerror = function (e) {
 		console.error(xhr.statusText);
 		};
-		xhr.open('GET', './1.php?link=' + link + "&pwd=" + password + "&red=", true);
+		xhr.open('GET', './api/api.php?link=' + link + "&pwd=" + password + "&red=", true);
 		xhr.send(null);
 	}
 	function red(){
-	    location.href=downloadLink;
+	    location.href=document.getElementById("result").value;
 	}
 	function copy(){
 	    var link = document.getElementById("link").value
@@ -116,7 +103,7 @@
         document.body.appendChild(textarea);
         textarea.style.position = 'absolute';
         textarea.style.clip = 'rect(0 0 0 0)';
-        textarea.value = 'http://wgame.miaovps.com:32022/1.php?link='+ link + "&pwd=" + password + "&red=114514";
+        textarea.value = 'http://wgame.miaovps.com:32022/api/api.php?link='+ link + "&pwd=" + password + "&red=114514";
         textarea.select();
         document.execCommand('copy', true);
         document.getElementById("message").innerHTML = "复制成功!"
