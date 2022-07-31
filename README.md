@@ -129,3 +129,5 @@ API 测试网站: http://wgame.miaovps.com:32022/api/api.php
 | author  | 文件的分享者               |
 | time    | 文件分享的时间             |
 | url     | 直链解析的 URL             |
+
+Star 过 15 爆肝 TamperMonkey 脚本
