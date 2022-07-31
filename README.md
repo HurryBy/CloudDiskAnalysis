@@ -52,7 +52,7 @@ API 测试网站: http://wgame.miaovps.com:32022/api/api.php
 
 有密码: `?link=https://wwt.lanzouw.com/iKvVt08mqfxa&pwd=ggg2`
 
-直接下载: `?link=https://wwt.lanzouw.com/iKvVt08mqfxa&red=114514`
+直接下载: `?link=https://wwt.lanzouw.com/inAe108hg9de&red=114514`
 
 文件夹分享: `?link=https://wwt.lanzouw.com/b0cmmk8ni&pwd=9m4q`
 
@@ -96,29 +96,36 @@ API 测试网站: http://wgame.miaovps.com:32022/api/api.php
 {
   "code": 200,
   "msg": "解析成功",
+  "docname": 33,
   "data": [
     {
       "id": "iuuKM08hpb1i",
       "name": "忘记密码看这里.txt",
-      "size": " 100.0 B",
+      "size": "100.0 B",
       "author": "18**",
-      "time": "前天15:55",
-      "url": "https://i81.lanzoug.com/072917bb/2022/07/27/25db0252a38e165c34288edbea065927.txt?st=Ri_65a09hD1dEH1BLnyU8A&e=1659089434&b=AbYAv1LKBehQq1O1ArdX_aATXWuECo1PUBbFfzlHdVL4F6ACZA_bpT0VGIBX1VcVIuByY_c&fi=76456658&pid=43-248-96-182&up=2&mp=1&co=1"
+      "time": "3 天前",
+      "url": "https://i81.lanzoug.com/073113bb/2022/07/27/25db0252a38e165c34288edbea065927.txt?st=MV2A4aqzFAXMkZKrpwjDFg&e=1659247771&b=ArUOsQiQAu8D_bFawAbQGrVSHAbpW91PUCb0AkQeLAugH6g_bWBewEhlWMVCxSdgR4ByY_c&fi=76456658&pid=43-248-96-182&up=2&mp=1&co=1"
     },
     {
       "id": "ifqDn08hpb0h",
       "name": "字幕.txt",
-      "size": " 1.0 K",
+      "size": "1.0 K",
       "author": "18**",
-      "time": "前天15:55",
-      "url": "https://i71.lanzoug.com/072917bb/2022/07/27/317ab6df371a60c6a38137b4d9ebe183.txt?st=MLJrjngon-FrPHHwnZOnDg&e=1659089435&b=Cb4NoASTBeVZtVCTB3lXJwYrCiI_c&fi=76456657&pid=43-248-96-182&up=2&mp=1&co=1"
+      "time": "3 天前",
+      "url": "https://i71.lanzoug.com/073113bb/2022/07/27/317ab6df371a60c6a38137b4d9ebe183.txt?st=hbKeqYJ43N7j30zj-1GdFQ&e=1659247771&b=ArVc8VLFWbkD7wLBCnQHd1R5DSU_c&fi=76456657&pid=43-248-96-182&up=2&mp=1&co=1"
     }
   ]
 }
 ```
 
-| Code | 返回值              |
-| ---- | ------------------- |
-| 200  | 解析成功            |
-| 201  | 密码错误/请输入密码 |
-| 202  | 链接错误/链接失效   |
+| 返回值  | 解释                       |
+| ------- | -------------------------- |
+| code    | 简便的判断程序返回是否正常 |
+| msg     | 程序返回的文字说明         |
+| docname | 文件夹分享中文件夹的名字   |
+| id      | 文件夹分享中各个文件的 ID  |
+| name    | 文件的名字                 |
+| size    | 文件的大小                 |
+| author  | 文件的分享者               |
+| time    | 文件分享的时间             |
+| url     | 直链解析的 URL             |

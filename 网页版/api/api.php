@@ -1,6 +1,7 @@
 <?php
 error_reporting(0);
 $downloadLink = "";
+$docname = "";
 function rand_IP(){
     $ip2id = round(rand(600000, 2550000) / 10000);
     $ip3id = round(rand(600000, 2550000) / 10000);
@@ -14,7 +15,7 @@ function get_file_info($data){
     $info = [];
     $name = zhengze('/"md">(.*) <span/', $data);
     $info[0] = $name;
-    $size = zhengze('/mtt">\((.*) \)<\/span>/', $data);
+    $size = zhengze('/mtt">\( (.*) \)<\/span>/', $data);
     $info[1] = $size;
     $author = zhengze('/发布者:<\/span>(.*?) <span/', $data);
     $info[2] = $author;
@@ -86,15 +87,18 @@ function start($link = 0, $password){
             if(stripos($curldata1, '举报') == TRUE){
                 $curldata = $curldata1;
             }
-            //就是多文件链接 那么就进行其他操作
-            $ib = zhengze('/ib(.*)\';/', $curldata);
-            $ib = zhengze('/= \'(.*)/', $ib);
-            $ih = zhengze('/ih(.*)\';/', $curldata);
-            $ih = zhengze('/= \'(.*)/', $ih);
+            preg_match_all('/var i(.*)\';/m', $curldata, $somatches , PREG_SET_ORDER, 0);
+            global $docname ;
+            $docname = $somatches[0][1];
+            $t = $somatches[1][1];
+            $k = $somatches[2][1];
+            $docname = zhengze('/=\'(.*)/', $docname);
+            $t = zhengze('/= \'(.*)/', $t);
+            $k = zhengze('/= \'(.*)/', $k);
             $fid = zhengze('/\'fid\':(.*),/', $curldata);
             $uid = zhengze('/\'uid\':\'(.*)\'/', $curldata);
             $pgs = 1;
-            $post_data = array('lx' => 2, 'fid' => intval($fid), 'uid' => $uid, 'pg' => intval($pgs), 'rep' => '0', 't' => $ib, 'k' => $ih, 'up' => 1, 'ls' => 1, 'pwd' => $password);
+            $post_data = array('lx' => 2, 'fid' => intval($fid), 'uid' => $uid, 'pg' => intval($pgs), 'rep' => '0', 't' => $t, 'k' => $k, 'up' => 1, 'ls' => 1, 'pwd' => $password);
             $postdata = http_build_query($post_data);
             $options = array('http' => array(
                 'method' => 'POST',
@@ -135,15 +139,6 @@ function start($link = 0, $password){
                         "time" => $info[3],
                         "url" => $resultabc
                     );
-                    //$result[$i] = 'id' => $dataa['text'][$i]['id'];
-                    //$result[$i+1] = 'name' => $dataa['text'][$i]['name_all'];
-                    // 画个饼 
-                    //$filearray = $filearray + array(
-                    //    "id" => $dataa['text'][$i]['id'],
-                    //    "name" => $dataa['text'][$i]['name_all']
-                    //);
-                    //$result = $result.$dataa['text'][$i]['id'].','.$dataa['text'][$i]['name_all'].';';
-                    //$result = $result + $dataa['text'][$i]['id'].','.$dataa['text'][$i]['name_all'].';';
                 }else{
                     break;
                 }
@@ -255,22 +250,27 @@ if($redirect == NULL){
             "code" => 201, 
             "msg" => '密码错误'
         );
-        echo json_encode($json, JSON_NUMERIC_CHECK | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-        exit();
     }
     if($result == "链接错误"){
         $json = array(
             "code" => 202, 
             "msg" => '链接错误/失效'
         );
-        echo json_encode($json, JSON_NUMERIC_CHECK | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-        exit();
     }
-    $json = array(
+    if($docname != ""){
+        $json = array(
+        "code" => 200, 
+        "msg" => '解析成功',
+        "docname" => $docname,
+        "data" => $result
+        );
+    }else{
+        $json = array(
         "code" => 200, 
         "msg" => '解析成功',
         "data" => $result
-    );
+        );
+    }
     echo json_encode($json, JSON_NUMERIC_CHECK | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     exit();
 }else{
