@@ -250,27 +250,31 @@ if($redirect == NULL){
             "code" => 201, 
             "msg" => '密码错误'
         );
-    }
-    if($result == "链接错误"){
+    }else{
+        if($result == "链接错误"){
         $json = array(
             "code" => 202, 
             "msg" => '链接错误/失效'
         );
-    }
-    if($docname != ""){
+    }else{
+        if($docname != ""){
         $json = array(
         "code" => 200, 
         "msg" => '解析成功',
         "docname" => $docname,
         "data" => $result
         );
-    }else{
-        $json = array(
-        "code" => 200, 
-        "msg" => '解析成功',
-        "data" => $result
-        );
+        }else{
+            $json = array(
+            "code" => 200, 
+            "msg" => '解析成功',
+            "data" => $result
+            );
+        }
     }
+    }
+    
+    
     echo json_encode($json, JSON_NUMERIC_CHECK | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     exit();
 }else{
