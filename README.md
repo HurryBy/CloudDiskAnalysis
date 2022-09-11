@@ -4,7 +4,7 @@
 
 ### 测试网站
 
-网页版测试网站: http://jiexi.lanzoucloud.ml/
+网页版测试网站: http://wgame.miaovps.com:32022
 
 ### 功能列表
 
@@ -16,7 +16,7 @@
 
 ### 介绍
 
-自动获取蓝奏云分享链接的直链，然后你就可以获取添加到你自己的网页里面，主要是蓝奏云还不限速，非常好用！
+自动获取蓝奏云分享链接的直链，然后你就可以获取添加到你自己的网页里面.
 
 ### 免责声明
 
@@ -54,7 +54,7 @@ API 测试网站: http://wgame.miaovps.com:32022/api/api.php
 
 直接下载: `?link=https://wwt.lanzouw.com/inAe108hg9de&red=114514`
 
-文件夹分享: `?link=https://wwt.lanzouw.com/b0cmmk8ni&pwd=9m4q`
+文件夹分享: `?link=https://wwt.lanzouw.com/b0cmny2aj&pwd=c8wc`
 
 ### 返回示例
 
@@ -96,23 +96,95 @@ API 测试网站: http://wgame.miaovps.com:32022/api/api.php
 {
   "code": 200,
   "msg": "解析成功",
-  "docname": 33,
+  "docname": "Chyua",
   "data": [
     {
-      "id": "iuuKM08hpb1i",
-      "name": "忘记密码看这里.txt",
-      "size": "100.0 B",
+      "id": "injhP096pa3e",
+      "name": "点击启动游戏.exe",
+      "size": "2.6 M",
       "author": "18**",
-      "time": "3 天前",
-      "url": "https://i81.lanzoug.com/073113bb/2022/07/27/25db0252a38e165c34288edbea065927.txt?st=MV2A4aqzFAXMkZKrpwjDFg&e=1659247771&b=ArUOsQiQAu8D_bFawAbQGrVSHAbpW91PUCb0AkQeLAugH6g_bWBewEhlWMVCxSdgR4ByY_c&fi=76456658&pid=43-248-96-182&up=2&mp=1&co=1"
+      "time": "2022-08-08",
+      "url": "https://all-file.lanzoug.com/091111bb/2022/08/08/89a9b721568792d6788454555f9f93a4.exe?st=pUYrhgeThJnia36IeQdC_w&e=1662868734&b=VuMPjQa_aU7NYil_byBbBSxlSuCLFU3wCuALVc6QC_aBeEG3AiHAC5UNFB9X2w_c&fi=77623024&pid=43-248-96-182&up=2&mp=1&co=1"
     },
     {
-      "id": "ifqDn08hpb0h",
-      "name": "字幕.txt",
-      "size": "1.0 K",
+      "id": "i6mck096p9mh",
+      "name": "d8-ff.rar",
+      "size": "85.2 M",
       "author": "18**",
-      "time": "3 天前",
-      "url": "https://i71.lanzoug.com/073113bb/2022/07/27/317ab6df371a60c6a38137b4d9ebe183.txt?st=hbKeqYJ43N7j30zj-1GdFQ&e=1659247771&b=ArVc8VLFWbkD7wLBCnQHd1R5DSU_c&fi=76456657&pid=43-248-96-182&up=2&mp=1&co=1"
+      "time": "2022-08-08",
+      "url": "https://all-file.lanzoug.com/091111bb/2022/08/08/25003f1fc1002fe4a4788f32f4b4edb5.rar?st=mmEYRTjl00N7jrQcRvU3Pw&e=1662868734&b=ADZaYgQpUDNSYVYuACIHYgAn&fi=77623007&pid=43-248-96-182&up=2&mp=1&co=1"
+    },
+    {
+      "id": "iJQXg096p90f",
+      "name": "a8-d7.rar",
+      "size": "92.1 M",
+      "author": "18**",
+      "time": "2022-08-08",
+      "url": "https://all-file.lanzoug.com/091111bb/2022/08/08/956a3caf34287acca8ffc27c702cdeff.rar?st=SUopdsHZop9l79fQAqK8-w&e=1662868735&b=VGcJMVJ_aVDVXNQN7UHIBZAcg&fi=77622985&pid=43-248-96-182&up=2&mp=1&co=1"
+    },
+    {
+      "id": "i8kTb096p7wf",
+      "name": "66-a7.rar",
+      "size": "75.8 M",
+      "author": "18**",
+      "time": "2022-08-08",
+      "url": "https://all-file.lanzoug.com/091111bb/2022/08/08/49c07d2f5f2627a852aaf09675000999.rar?st=BunYZs39WPecRIzKUUxrVQ&e=1662868736&b=BGABNwAtUDRUNl8nUXMPagEm&fi=77622945&pid=43-248-96-182&up=2&mp=1&co=1"
+    },
+    {
+      "id": "iSXm1096p74h",
+      "name": "42-65.rar",
+      "size": "79.3 M",
+      "author": "18**",
+      "time": "2022-08-08",
+      "url": "https://all-file.lanzoug.com/091111bb/2022/08/08/f6e349e1be631f06561ad64c1cdc8777.rar?st=0rMFzpGaqj9IsNFuiMAWyA&e=1662868736&b=UjQPPQAtBzRUNAd_aUnBQNQMk&fi=77622917&pid=43-248-96-182&up=2&mp=1&co=1"
+    },
+    {
+      "id": "iErZR096p6da",
+      "name": "06-41.rar",
+      "size": "89.3 M",
+      "author": "18**",
+      "time": "2022-08-08",
+      "url": "https://all-file.lanzoug.com/091111bb/2022/08/08/5d06c143945766d4eba238701774cafa.rar?st=FpdOp-eS1vJjU6jQ1x8nIA&e=1662868737&b=BmQBNwAtUWAAZFYuVXcHYlVy&fi=77622890&pid=43-248-96-182&up=2&mp=1&co=1"
+    },
+    {
+      "id": "ilmmk096p5ri",
+      "name": "00-5f.rar",
+      "size": "68.2 M",
+      "author": "18**",
+      "time": "2022-08-08",
+      "url": "https://all-file.lanzoug.com/091111bb/2022/08/08/3a93113b7938c2529581aa6b8c456dca.rar?st=w0rUTmJHprNp5UjdU5zlkQ&e=1662868737&b=AmBaalB9WWlXZF8nCylUMQcg&fi=77622868&pid=43-248-96-182&up=2&mp=1&co=1"
+    },
+    {
+      "id": "iTcNs096p5fg",
+      "name": "assets_1.rar",
+      "size": "207.5 K",
+      "author": "18**",
+      "time": "2022-08-08",
+      "url": "https://all-file.lanzoug.com/091111bb/2022/08/08/416da531b26955bde9aa0b2e8335a9e0.rar?st=WLa4KXOXy1JFlxagl9HU6w&e=1662868738&b=UmEAcwZ1UTFSc196BAsGMwN4XnBQMAVx&fi=77622856&pid=43-248-96-182&up=2&mp=1&co=1"
+    },
+    {
+      "id": "i4Tq8096p5ab",
+      "name": "libraries_2.rar",
+      "size": "31.0 M",
+      "author": "18**",
+      "time": "2022-08-08",
+      "url": "https://all-file.lanzoug.com/091111bb/2022/08/08/e0452329c4e376594e913d63619e1aec.rar?st=fwJW9Q8H0a0Iimsx2kGZ3Q&e=1662868739&b=BTteN1AyAHcFMQMnAzpSMwUjDg0DMFR8U3JcMAdy&fi=77622851&pid=43-248-96-182&up=2&mp=1&co=1"
+    },
+    {
+      "id": "ic5Og096p53e",
+      "name": "libraries_1.rar",
+      "size": "63.8 M",
+      "author": "18**",
+      "time": "2022-08-08",
+      "url": "https://all-file.lanzoug.com/091111bb/2022/08/08/dfdf3958bc9783413e882690a2f25a49.rar?st=bJ5UF9855Ge6-I5U3737pw&e=1662868739&b=AT8KY1Q2UiVXY197V25XNgAmDg0GNgIqVncKZl0o&fi=77622844&pid=43-248-96-182&up=2&mp=1&co=1"
+    },
+    {
+      "id": "iSeyF096p4pa",
+      "name": "except_assets_libraries.rar",
+      "size": "42.7 M",
+      "author": "18**",
+      "time": "2022-08-08",
+      "url": "https://all-file.lanzoug.com/091111bb/2022/08/08/bfa92c20211f18b5bf1e7abee3e692a3.rar?st=HW4p1FzGuO8thWm0kLGZSw&e=1662868740&b=BjEOdlIxAmJTdlR2V1gGYwMlDSIBZQt5CSldD1I5AGsJOVspB2ZTJAM_aUGNXdAQuASZbZgBz&fi=77622830&pid=43-248-96-182&up=2&mp=1&co=1"
     }
   ]
 }
@@ -130,4 +202,4 @@ API 测试网站: http://wgame.miaovps.com:32022/api/api.php
 | time    | 文件分享的时间             |
 | url     | 直链解析的 URL             |
 
-Star 过 15 爆肝 TamperMonkey 脚本
+正在爆肝油猴脚本。最新更新日期 2022/09/11

@@ -117,17 +117,13 @@ function start($link = 0, $password){
                 if($dataa['text'][$i]['id'] != NULL){
                     $file_id = $dataa['text'][$i]['id'];
                     $curldata = c("https://".$lanzou_prefix.".lanzou".$lanzou.".com/tp/".$file_id, "");
-                    $pototo = zhengze('/var pototo = (.*)/',$curldata);
+                    $pototo = zhengze('/var cppat = \'(.*)\';/',$curldata);
                     if(!$pototo){
                         $lanzou = "w";
                         $curldata = c("https://".$lanzou_prefix.".lanzou".$lanzou.".com/tp/".$lanzou_id, "");
                         $pototo = zhengze('/var pototo = (.*)/',$curldata);
                     }
-                    $spototo = zhengze('/var spototo = (.*)/',$curldata);
-                    $pototo = str_replace("'","",$pototo);
-                    $pototo = str_replace(";","",$pototo);
-                    $spototo = str_replace("'","",$spototo);
-                    $spototo = str_replace(";","",$spototo);
+                    $spototo = zhengze('/cppat \+ \'(.*)\'/',$curldata);
                     $resultabc = $pototo.$spototo;
                     $resultabc = get_redirect_url($resultabc,"Mozilla/5.0 (Android 4.4; Mobile; rv:70.0) Gecko/70.0 Firefox/70.0");
                     $info = get_file_info($curldata);
@@ -203,17 +199,13 @@ function start($link = 0, $password){
             "url" => $url["redirect_url"]
         );
     }else{
-        $pototo = zhengze('/var pototo = (.*)/',$curldata);
+        $pototo = zhengze('/var cppat = \'(.*)\';/',$curldata);
         if(!$pototo){
             $lanzou = "w";
             $curldata = c("https://".$lanzou_prefix.".lanzou".$lanzou.".com/tp/".$lanzou_id, "");
-            $pototo = zhengze('/var pototo = (.*)/',$curldata);
+            $pototo = zhengze('/var cppat = \'(.*)\';/',$curldata);
         }
-        $spototo = zhengze('/var spototo = (.*)/',$curldata);
-        $pototo = str_replace("'","",$pototo);
-        $pototo = str_replace(";","",$pototo);
-        $spototo = str_replace("'","",$spototo);
-        $spototo = str_replace(";","",$spototo);
+        $spototo = zhengze('/cppat \+ \'(.*)\'/',$curldata);
         $result = $pototo.$spototo;
         $result = get_redirect_url($result,"Mozilla/5.0 (Android 4.4; Mobile; rv:70.0) Gecko/70.0 Firefox/70.0");
         global $downloadLink;
