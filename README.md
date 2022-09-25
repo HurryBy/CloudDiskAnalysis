@@ -4,7 +4,7 @@
 
 ### 测试网站
 
-网页版测试网站: http://wgame.miaovps.com:32022
+网页版测试网站: https://lanzou.humorously.tk
 
 ### 功能列表
 
@@ -34,7 +34,7 @@
 
 ### 测试网站
 
-API 测试网站: http://wgame.miaovps.com:32022/api/api.php
+API 测试网站: https://lanzou.humorously.tk/api/api.php
 
 ### API 参数
 
