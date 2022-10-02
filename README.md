@@ -202,4 +202,4 @@ API 测试网站: https://lanzou.humorously.tk/api/api.php
 | time    | 文件分享的时间             |
 | url     | 直链解析的 URL             |
 
-正在爆肝油猴脚本。最新更新日期 2022/09/11
+更新油猴脚本 , 最新更新日期 2022/10/02
