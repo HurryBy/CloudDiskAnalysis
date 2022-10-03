@@ -66,10 +66,11 @@ API 测试网站: https://lanzou.humorously.tk/api/api.php
   "msg": "解析成功",
   "data": {
     "name": "配音文件.mp3",
-    "size": " 2.8 M",
+    "size": "2.8 M",
     "author": "18**",
-    "time": "前天13:18",
-    "url": "https://i41.lanzoug.com/072917bb/2022/07/27/c9cfbdfb1d487506e3dd375317a3464f.mp3?st=DAVtxTvj-6oQwKAkQRFyFA&e=1659089377&b=ALtc2QKPWLRYkl_b6AbcPnVKAAblU7gGxBXgMbAZxUWA_c&fi=76444934&pid=43-248-96-182&up=2&mp=1&co=1"
+    "time": "2022-07-27",
+    "description": null,
+    "url": "https://s41.lanzoug.com/100309bb/2022/07/27/c9cfbdfb1d487506e3dd375317a3464f.mp3?st=5uPUVQOVGdIms5GcFWpQnw&e=1664761013&b=B7xc2QOOVbkCyFWwBbNXxVOBALgAulbmUSwPb1QjVGU_c&fi=76444934&pid=107-151-195-148&up=2&mp=1&co=1"
   }
 }
 ```
@@ -82,10 +83,11 @@ API 测试网站: https://lanzou.humorously.tk/api/api.php
   "msg": "解析成功",
   "data": {
     "name": "字幕.txt",
-    "size": " 1.0 K",
+    "size": "1.0 K",
     "author": "18**",
-    "time": "3 分钟前",
-    "url": "https://i01.lanzoug.com/072917bb/2022/07/29/ad5b3876da02ca8dbd6a7b3387c3493f.txt?st=XRC5tMY9L_G5cMe9eXO2Yw&e=1659089409&b=VONZ9AifBORXuwfEB3lXJwQpWXE_c&fi=76691410&pid=43-248-96-182&up=2&mp=0&co=1"
+    "time": "2022-07-29",
+    "description": null,
+    "url": "https://s01.lanzoug.com/100309bb/2022/07/29/ad5b3876da02ca8dbd6a7b3387c3493f.txt?st=ETWtF1FGPkeJR2AZtdczyg&e=1664761037&b=ArUJpFfAVbUC7lWWUS8DcwUoASk_c&fi=76691410&pid=222-131-184-198&up=2&mp=0&co=1"
   }
 }
 ```
@@ -104,7 +106,8 @@ API 测试网站: https://lanzou.humorously.tk/api/api.php
       "size": "2.6 M",
       "author": "18**",
       "time": "2022-08-08",
-      "url": "https://all-file.lanzoug.com/091111bb/2022/08/08/89a9b721568792d6788454555f9f93a4.exe?st=pUYrhgeThJnia36IeQdC_w&e=1662868734&b=VuMPjQa_aU7NYil_byBbBSxlSuCLFU3wCuALVc6QC_aBeEG3AiHAC5UNFB9X2w_c&fi=77623024&pid=43-248-96-182&up=2&mp=1&co=1"
+      "description": null,
+      "url": "https://s41.lanzoug.com/100309bb/2022/08/08/89a9b721568792d6788454555f9f93a4.exe?st=GKQvsd8jsUAhakYUK8kgkA&e=1664761057&b=Ardc3lPqU7MA0l6zAbQFkQX_aXeQBigepAbQLvgW6UbVWjFnWBigAYAAtX2w_c&fi=77623024&pid=107-151-195-148&up=2&mp=1&co=1"
     },
     {
       "id": "i6mck096p9mh",
@@ -112,7 +115,8 @@ API 测试网站: https://lanzou.humorously.tk/api/api.php
       "size": "85.2 M",
       "author": "18**",
       "time": "2022-08-08",
-      "url": "https://all-file.lanzoug.com/091111bb/2022/08/08/25003f1fc1002fe4a4788f32f4b4edb5.rar?st=mmEYRTjl00N7jrQcRvU3Pw&e=1662868734&b=ADZaYgQpUDNSYVYuACIHYgAn&fi=77623007&pid=43-248-96-182&up=2&mp=1&co=1"
+      "description": null,
+      "url": "https://s71.lanzoug.com/100309bb/2022/08/08/25003f1fc1002fe4a4788f32f4b4edb5.rar?st=2YIGbZtHlYQqk5CGu-3GPw&e=1664761058&b=VmAJMQEsUDNWZQV9AiBVMAcg&fi=77623007&pid=107-151-195-148&up=2&mp=1&co=1"
     },
     {
       "id": "iJQXg096p90f",
@@ -120,7 +124,8 @@ API 测试网站: https://lanzou.humorously.tk/api/api.php
       "size": "92.1 M",
       "author": "18**",
       "time": "2022-08-08",
-      "url": "https://all-file.lanzoug.com/091111bb/2022/08/08/956a3caf34287acca8ffc27c702cdeff.rar?st=SUopdsHZop9l79fQAqK8-w&e=1662868735&b=VGcJMVJ_aVDVXNQN7UHIBZAcg&fi=77622985&pid=43-248-96-182&up=2&mp=1&co=1"
+      "description": null,
+      "url": "https://s51.lanzoug.com:446/100309bb/2022/08/08/956a3caf34287acca8ffc27c702cdeff.rar?st=Xlo5f7gvQZrsh0XvDXhQhw&e=1664761059&b=UWIPN1J_aBWRSMFUtV3UHYgEm&fi=77622985&pid=107-151-195-148&up=2&mp=1&co=1"
     },
     {
       "id": "i8kTb096p7wf",
@@ -128,7 +133,8 @@ API 测试网站: https://lanzou.humorously.tk/api/api.php
       "size": "75.8 M",
       "author": "18**",
       "time": "2022-08-08",
-      "url": "https://all-file.lanzoug.com/091111bb/2022/08/08/49c07d2f5f2627a852aaf09675000999.rar?st=BunYZs39WPecRIzKUUxrVQ&e=1662868736&b=BGABNwAtUDRUNl8nUXMPagEm&fi=77622945&pid=43-248-96-182&up=2&mp=1&co=1"
+      "description": null,
+      "url": "https://s51.lanzoug.com:446/100309bb/2022/08/08/49c07d2f5f2627a852aaf09675000999.rar?st=UtA54f2o-HgXlSnRCr1z0Q&e=1664761060&b=VTEPOVB9AmYHZQJ6BCYPagcg&fi=77622945&pid=107-151-195-148&up=2&mp=1&co=1"
     },
     {
       "id": "iSXm1096p74h",
@@ -136,7 +142,8 @@ API 测试网站: https://lanzou.humorously.tk/api/api.php
       "size": "79.3 M",
       "author": "18**",
       "time": "2022-08-08",
-      "url": "https://all-file.lanzoug.com/091111bb/2022/08/08/f6e349e1be631f06561ad64c1cdc8777.rar?st=0rMFzpGaqj9IsNFuiMAWyA&e=1662868736&b=UjQPPQAtBzRUNAd_aUnBQNQMk&fi=77622917&pid=43-248-96-182&up=2&mp=1&co=1"
+      "description": null,
+      "url": "https://s71.lanzoug.com/100309bb/2022/08/08/f6e349e1be631f06561ad64c1cdc8777.rar?st=BSK_xT32XukYApUj1rVbig&e=1664761061&b=CW9dbwkkU2BWNlMrBCZTNgku&fi=77622917&pid=107-151-195-148&up=2&mp=1&co=1"
     },
     {
       "id": "iErZR096p6da",
@@ -144,7 +151,8 @@ API 测试网站: https://lanzou.humorously.tk/api/api.php
       "size": "89.3 M",
       "author": "18**",
       "time": "2022-08-08",
-      "url": "https://all-file.lanzoug.com/091111bb/2022/08/08/5d06c143945766d4eba238701774cafa.rar?st=FpdOp-eS1vJjU6jQ1x8nIA&e=1662868737&b=BmQBNwAtUWAAZFYuVXcHYlVy&fi=77622890&pid=43-248-96-182&up=2&mp=1&co=1"
+      "description": null,
+      "url": "https://s01.lanzoug.com/100309bb/2022/08/08/5d06c143945766d4eba238701774cafa.rar?st=7qwm6RKkVRqx0Nvw6dYogA&e=1664761062&b=UzEOOAEsADFXM1cvBCZQNQku&fi=77622890&pid=107-151-195-148&up=2&mp=1&co=1"
     },
     {
       "id": "ilmmk096p5ri",
@@ -152,7 +160,8 @@ API 测试网站: https://lanzou.humorously.tk/api/api.php
       "size": "68.2 M",
       "author": "18**",
       "time": "2022-08-08",
-      "url": "https://all-file.lanzoug.com/091111bb/2022/08/08/3a93113b7938c2529581aa6b8c456dca.rar?st=w0rUTmJHprNp5UjdU5zlkQ&e=1662868737&b=AmBaalB9WWlXZF8nCylUMQcg&fi=77622868&pid=43-248-96-182&up=2&mp=1&co=1"
+      "description": null,
+      "url": "https://s81.lanzoug.com/100309bb/2022/08/08/3a93113b7938c2529581aa6b8c456dca.rar?st=M7nkA6xxyqgMwhVpTK5AAQ&e=1664761063&b=BmQJOVN_bBzcFNgV9AiAAZQAn&fi=77622868&pid=107-151-195-148&up=2&mp=1&co=1"
     },
     {
       "id": "iTcNs096p5fg",
@@ -160,7 +169,8 @@ API 测试网站: https://lanzou.humorously.tk/api/api.php
       "size": "207.5 K",
       "author": "18**",
       "time": "2022-08-08",
-      "url": "https://all-file.lanzoug.com/091111bb/2022/08/08/416da531b26955bde9aa0b2e8335a9e0.rar?st=WLa4KXOXy1JFlxagl9HU6w&e=1662868738&b=UmEAcwZ1UTFSc196BAsGMwN4XnBQMAVx&fi=77622856&pid=43-248-96-182&up=2&mp=1&co=1"
+      "description": null,
+      "url": "https://s61.lanzoug.com/100309bb/2022/08/08/416da531b26955bde9aa0b2e8335a9e0.rar?st=eKz89gsLQY80kcfOu7qbUQ&e=1664761064&b=BzRcL1IhBWVSc1J3AwxSZwhzDCJTMwVx&fi=77622856&pid=107-151-195-148&up=2&mp=1&co=1"
     },
     {
       "id": "i4Tq8096p5ab",
@@ -168,7 +178,8 @@ API 测试网站: https://lanzou.humorously.tk/api/api.php
       "size": "31.0 M",
       "author": "18**",
       "time": "2022-08-08",
-      "url": "https://all-file.lanzoug.com/091111bb/2022/08/08/e0452329c4e376594e913d63619e1aec.rar?st=fwJW9Q8H0a0Iimsx2kGZ3Q&e=1662868739&b=BTteN1AyAHcFMQMnAzpSMwUjDg0DMFR8U3JcMAdy&fi=77622851&pid=43-248-96-182&up=2&mp=1&co=1"
+      "description": null,
+      "url": "https://s11.lanzoug.com/100309bb/2022/08/08/e0452329c4e376594e913d63619e1aec.rar?st=xu3p3bCDz0QftGTt6mlJ2g&e=1664761065&b=BzleNwNhBHNUYAcjAzoObwIkCwgHNAYuVHUAbAB1&fi=77622851&pid=107-151-195-148&up=2&mp=1&co=1"
     },
     {
       "id": "ic5Og096p53e",
@@ -176,7 +187,8 @@ API 测试网站: https://lanzou.humorously.tk/api/api.php
       "size": "63.8 M",
       "author": "18**",
       "time": "2022-08-08",
-      "url": "https://all-file.lanzoug.com/091111bb/2022/08/08/dfdf3958bc9783413e882690a2f25a49.rar?st=bJ5UF9855Ge6-I5U3737pw&e=1662868739&b=AT8KY1Q2UiVXY197V25XNgAmDg0GNgIqVncKZl0o&fi=77622844&pid=43-248-96-182&up=2&mp=1&co=1"
+      "description": null,
+      "url": "https://s41.lanzoug.com/100309bb/2022/08/08/dfdf3958bc9783413e882690a2f25a49.rar?st=NQZ5K85i0D8iLrCzGGwiiw&e=1664761066&b=U20BaAFjUSYHMwMnCjMEZQguDA8FNVF5BSQLZ1Mm&fi=77622844&pid=107-151-195-148&up=2&mp=1&co=1"
     },
     {
       "id": "iSeyF096p4pa",
@@ -184,22 +196,24 @@ API 测试网站: https://lanzou.humorously.tk/api/api.php
       "size": "42.7 M",
       "author": "18**",
       "time": "2022-08-08",
-      "url": "https://all-file.lanzoug.com/091111bb/2022/08/08/bfa92c20211f18b5bf1e7abee3e692a3.rar?st=HW4p1FzGuO8thWm0kLGZSw&e=1662868740&b=BjEOdlIxAmJTdlR2V1gGYwMlDSIBZQt5CSldD1I5AGsJOVspB2ZTJAM_aUGNXdAQuASZbZgBz&fi=77622830&pid=43-248-96-182&up=2&mp=1&co=1"
+      "description": null,
+      "url": "https://s01.lanzoug.com/100309bb/2022/08/08/bfa92c20211f18b5bf1e7abee3e692a3.rar?st=XbfXW9Nzfak6eRHNOiB3wA&e=1664761067&b=U2RaIgBjVzcEIV99CgUAZQYgXnFTNwp4UnIAUgBrBG8IOA99VTRVIgA8BDcDIAErUnUJNFEi&fi=77622830&pid=107-151-195-148&up=2&mp=1&co=1"
     }
   ]
 }
 ```
 
-| 返回值  | 解释                       |
-| ------- | -------------------------- |
-| code    | 简便的判断程序返回是否正常 |
-| msg     | 程序返回的文字说明         |
-| docname | 文件夹分享中文件夹的名字   |
-| id      | 文件夹分享中各个文件的 ID  |
-| name    | 文件的名字                 |
-| size    | 文件的大小                 |
-| author  | 文件的分享者               |
-| time    | 文件分享的时间             |
-| url     | 直链解析的 URL             |
+| 返回值      | 解释                       |
+| ----------- | -------------------------- |
+| code        | 简便的判断程序返回是否正常 |
+| msg         | 程序返回的文字说明         |
+| docname     | 文件夹分享中文件夹的名字   |
+| id          | 文件夹分享中各个文件的 ID  |
+| name        | 文件的名字                 |
+| size        | 文件的大小                 |
+| author      | 文件的分享者               |
+| time        | 文件分享的时间             |
+| url         | 直链解析的 URL             |
+| description | 文件描述，可用作公告       |
 
-更新油猴脚本 , 最新更新日期 2022/10/02
+更新油猴脚本 , 最新更新日期 2022/10/03

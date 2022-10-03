@@ -21,6 +21,8 @@ function get_file_info($data){
     $info[2] = $author;
     $time = zhengze('/时间:<\/span>(.*?) <span/', $data);
     $info[3] = $time;
+    $description = zhengze('/mdo">[\s\S](.*?)<\/div>/m', $data);
+    $info[4] = $description;
     return $info;
 }
 function get_redirect_url($url,$ua=0){
@@ -77,6 +79,7 @@ function start($link = 0, $password){
         $lanzou_prefix = zhengze('/(.*).lanzou'.$lanzou.'.com/', $link);
         $length = strlen($link)-strrpos($link,"/")+1;
         $lanzou_id = substr($link,strrpos($link,"/")+1,$length);
+        // 修正链接
     }
     $curldata = c("https://".$lanzou_prefix.".lanzou".$lanzou.".com/tp/".$lanzou_id, "");
     if(stripos($curldata, '举报文件') == FALSE){
@@ -133,6 +136,7 @@ function start($link = 0, $password){
                         "size" => $info[1],
                         "author" => $info[2],
                         "time" => $info[3],
+                        "description" => $info[4],
                         "url" => $resultabc
                     );
                 }else{
@@ -196,6 +200,7 @@ function start($link = 0, $password){
             "size" => $info[1],
             "author" => $info[2],
             "time" => $info[3],
+            "description" => $info[4],
             "url" => $url["redirect_url"]
         );
     }else{
@@ -215,6 +220,7 @@ function start($link = 0, $password){
             "size" => $info[1],
             "author" => $info[2],
             "time" => $info[3],
+            "description" => $info[4],
             "url" => $result
         );
     }
@@ -223,7 +229,16 @@ $link = isset($_GET['link']) ? $_GET['link'] : NULL;
 $password = isset($_GET['pwd']) ? $_GET['pwd'] : NULL;
 $redirect = isset($_GET['red']) ? $_GET['red'] : NULL;
 if ($link==NULL) {
-	echo "蓝奏云解析下载系统：</br>支持外链分享地址(link)解析</br>在链接后面加入?link=你的蓝奏分享链接&pwd=密码(可空)&red=任意数(可空)[填写任意数代表直接跳转至直链链接,可用于个人站点]</br>即可";
+    echo "<!DOCTYPE html>
+    <html>
+        <head>
+            <title>蓝奏云直链API解析</title>
+        </head>
+        <body>
+            <h1> 蓝奏云直链API解析 </h1>
+            <bold>在链接后面加入?link=你的蓝奏分享链接&pwd=密码(可空)&red=任意数(可空)[填写任意数代表直接跳转至直链链接,可用于个人站点]</bold>
+        </body>
+    </html>";
     exit(); 
 }elseif ($link) {   
     $link = str_replace("https://","",$link);
