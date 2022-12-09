@@ -153,7 +153,7 @@ function start($link = 0, $password){
     }
     $info = get_file_info($curldata);
     if($password){
-        $posign = zhengze('/var posign = (.*)/', $curldata);
+        $posign = zhengze('/var postsign = (.*)/', $curldata);
         $posign = str_replace("'","",$posign);
         $posign = str_replace(";","",$posign);
         // 有密码请求网址
