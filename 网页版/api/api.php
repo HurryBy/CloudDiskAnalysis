@@ -90,7 +90,7 @@ function start($link = 0, $password){
             if(stripos($curldata1, '举报') == TRUE){
                 $curldata = $curldata1;
             }
-            preg_match_all('/var i(.*)\';/m', $curldata, $somatches , PREG_SET_ORDER, 0);
+            preg_match_all('/var (.*)\';/m', $curldata, $somatches , PREG_SET_ORDER, 0);
             global $docname ;
             $docname = $somatches[0][1];
             $t = $somatches[1][1];
