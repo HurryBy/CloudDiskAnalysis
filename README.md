@@ -2,6 +2,7 @@
 
 获取蓝奏云分享链接直链
 
+[![Security Status](https://s.murphysec.com/badge/HurryBy/lanzou-directlink.svg)](https://www.murphysec.com/p/HurryBy/lanzou-directlink)
 ### 测试网站
 
 网页版测试网站: https://lanzou.humorously.tk
