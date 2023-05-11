@@ -5,9 +5,7 @@
 [![Security Status](https://s.murphysec.com/badge/HurryBy/lanzou-directlink.svg)](https://www.murphysec.com/p/HurryBy/lanzou-directlink)
 ### 测试网站
 
-网页版测试网站: https://lanzou.humorously.tk 
-
-> 测试网站已经被蓝奏云拉黑 请下载源码并自行搭建
+网页版测试网站: https://cloud.humorously.cn
 
 ### 功能列表
 
@@ -34,7 +32,7 @@
 
 ### 测试网站
 
-API 测试网站: https://lanzou.humorously.tk/api/api.php
+API 测试网站: https://cloud.humorously.cn/api/api.php
 
 ### API 参数
 
