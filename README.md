@@ -1,6 +1,6 @@
-# Lanzou-DirectLink
+# CloudDiskAnalysis
 
-获取蓝奏云分享链接直链
+获取云盘分享链接直链
 
 [![Security Status](https://s.murphysec.com/badge/HurryBy/lanzou-directlink.svg)](https://www.murphysec.com/p/HurryBy/lanzou-directlink)
 ### 测试网站
@@ -26,13 +26,13 @@
 
 我花费了很多的时间和精力，如果你想让这个项目传播的更广，麻烦点个 Star，谢谢！
 
-# Lanzou-DirectLink-Api
+# Api
 
-获取蓝奏云直链的 API
+以蓝奏云为例
 
 ### 测试网站
 
-API 测试网站: https://cloud.humorously.cn/api/api.php
+API 测试网站: https://cloud.humorously.cn/api/lanzou.php
 
 ### API 参数
 
@@ -216,4 +216,4 @@ PHP Version<=7.4
 | url         | 直链解析的 URL       |
 | description | 文件描述，可用作公告 |
 
-最新更新日期 2023/01/15 新年快乐!
+最新更新日期 2023/05/21
