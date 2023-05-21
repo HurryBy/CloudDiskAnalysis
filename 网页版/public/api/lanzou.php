@@ -59,7 +59,7 @@ function c($url, $ua = 0){
     $headers = array(
         "accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6"
     );
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     if ($ua) {
         curl_setopt($ch, CURLOPT_USERAGENT, $ua);
     } else {
@@ -302,4 +302,3 @@ if($redirect == NULL){
         echo json_encode($json, JSON_NUMERIC_CHECK | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     }
 }
-?>
