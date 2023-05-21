@@ -20,7 +20,8 @@ function start($link = 0, $password = '')
 {
     $result = array(
         'code' => 200,
-        'data' => array()
+        'data' => array(),
+        'msg' => "解析成功"
     );
     // Get Share_Key
     $re = '/s\/(.*).html/m';
@@ -44,6 +45,12 @@ function start($link = 0, $password = '')
         // 1.获取Len
         if ($data['data']['InfoList'][0]['Type'] == 1) {
             $ID = $data['data']['InfoList'][0]['FileId'];
+            $result = array(
+                'code' => 200,
+                'data' => array(),
+                'msg' => "解析成功",
+                'docname' => $data['data']['InfoList'][0]['FileName']
+            );
             // 文件夹
             $data = file_get_contents("https://www.123pan.com/b/api/share/get?limit=100&next=1&orderBy=share_id&orderDirection=desc&shareKey=$share_key&SharePwd=$password&ParentFileId=$ID&Page=1", false);
             $data = json_decode($data, true);
@@ -77,9 +84,9 @@ function start($link = 0, $password = '')
             $DownloadURL = $data['data']['DownloadURL'];
             $DownloadURL1 = get_redirect_url($DownloadURL);
             array_push($result['data'], array(
-                "Name" => $FileName,
-                "Size" => $Size,
-                "DownloadURL" => $DownloadURL1
+                "name" => $FileName,
+                "size" => $Size,
+                "url" => $DownloadURL1
             ));
         }
         return $result;
