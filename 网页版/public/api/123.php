@@ -86,7 +86,7 @@ function start($link = 0, $password = '')
             array_push($result['data'], array(
                 "name" => $FileName,
                 "size" => $Size,
-                "url" => $DownloadURL1
+                "DownloadURL" => $DownloadURL1
             ));
         }
         return $result;
@@ -101,6 +101,12 @@ $result = start($link, $password);
 if ($redirect == NULL) {
     header('Access-Control-Allow-Origin:*');
     header('Content-Type:application/json');
+    if ($result['data'][0]['DownloadURL'] == NULL && $result['code'] != 201) {
+        $result = array(
+            "code" => 202,
+            "msg" => '链接错误/失效/解析失败',
+        );
+    }
     echo json_encode($result, JSON_NUMERIC_CHECK | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     exit();
 } else {

@@ -5,10 +5,10 @@
           <div class="demo-basic--circle">
             <div class="block"><el-avatar :size="150" :src="avatar"></el-avatar></div>
           </div>
-            <h1>短视频/图集在线去水印解析</h1>
+            <h1>网盘直链解析</h1>
             <div class="typo">
-              <p><strong>项目地址 </strong><a href="https://github.com/HurryBy/lanzou-directlink" target="_blank" rel="nofollow"><u>点我跳转</u></a></p>
-              <p><strong>目前支持 </strong>123云盘/蓝奏云盘</p>
+              <p><strong>项目地址 </strong><a href="https://github.com/HurryBy/CloudDiskAnalysis" target="_blank" rel="nofollow"><u>点我跳转</u></a></p>
+              <p><strong>目前支持 </strong>123云盘/蓝奏云盘/移动云空间</p>
               <p><strong>温馨提示 </strong><a target="_blank" href="http://www.freecdn.pw/?zzwz" title="免费云加速（FreeCDN），为您免费提供网站加速和网站防御（DDOS、CC攻击）" alt="免费云加速（FreeCDN），为您免费提供网站加速和网站防御（DDOS、CC攻击）">本站由免费云加速（FreeCDN）提供网站加速和攻击防御服务</a></p>
             </div>
             <hr>
@@ -18,6 +18,7 @@
                     <el-select v-model="select" slot="prepend" placeholder="123云盘">
                       <el-option label="123云盘" value="1"></el-option>
                       <el-option label="蓝奏云盘" value="2"></el-option>
+                      <el-option label="移动云空间" value="3"></el-option>
                     </el-select>
                     <el-button slot="append" @click="onSubmit" >解析</el-button>
                   </el-input>
@@ -52,8 +53,7 @@
             label="操作"
             width="170">
             <template slot-scope="scope">
-              <el-button @click="downloadFile(scope.row.url)" type="text" size="small">下载文件</el-button>
-              <el-button @click="doUrlCopy()" type="text" size="small">复制直链地址</el-button>
+              <el-button @click="downloadFile(scope.row.DownloadURL)" type="text" size="small">下载文件</el-button>
             </template>
     </el-table-column>
         </el-table>
@@ -71,9 +71,7 @@ export default {
     return{
       link: "",
       password: "",
-      isMultiFile: false,
       isLoading:false,
-      multiFile:{},
       tableData:[],
       avatar:"https://avatars.githubusercontent.com/u/47547391",
       select:"1",
@@ -81,10 +79,10 @@ export default {
   },
   methods:{
     onSubmit(){
-      this.isMultiFile=false
       this.downloadLink=""
       this.isLoading=true
       var getLink=""
+      var newLink=""
       if(this.password.trim() === ""){
         if(this.select == 1){
           getLink = `../api/123.php?link=${this.link}`
@@ -92,12 +90,20 @@ export default {
         if(this.select == 2){
           getLink = `../api/lanzou.php?link=${this.link}`
         }
+        if(this.select == 3){
+          newLink = encodeURIComponent(this.link)
+          getLink = `../api/yidong.php?link=${newLink}`
+        }
       }else{
         if(this.select == 1){
           getLink = `../api/123.php?link=${this.link}&pwd=${this.password}`
         }
         if(this.select == 2){
           getLink = `../api/lanzou.php?link=${this.link}&pwd=${this.password}`
+        }
+        if(this.select == 3){
+          newLink = encodeURIComponent(this.link)
+          getLink = `../api/yidong.php?link=${newLink}&pwd=${this.password}`
         }
       }
       axios.get(getLink).then(
@@ -108,14 +114,7 @@ export default {
               type: 'success'
             })
             this.isLoading=false
-            if(response.data.docname === undefined){
-              //单文件
-              this.$set(this.tableData,0,response.data.data)
-            }else{
-              //多文件
-              this.tableData = response.data.data
-              this.isMultiFile = true
-            }
+            this.tableData = response.data.data
           }else{
             this.isLoading=false
             this.$message.error(response.data.msg)
@@ -130,18 +129,6 @@ export default {
     downloadFile(downloadUrl){
       window.location.href=downloadUrl
     },
-    doUrlCopy(){
-      if(this.password === undefined){this.password=""}
-      this.$copyText("https://lanzou.humorously.tk/api/api.php?link=" + this.link + "&pwd=" + this.password).then(()=>{
-        this.$message({
-          message: '复制成功',
-          type: 'success'
-        })
-        },
-        ()=>{
-        this.$message.error('复制失败');
-      })
-    }
   }
 }
 </script>
