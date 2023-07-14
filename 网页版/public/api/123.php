@@ -44,6 +44,7 @@ function start($link = 0, $password = '')
         // 开始获取链接
         // 1.获取Len
         if ($data['data']['InfoList'][0]['Type'] == 1) {
+            // 文件夹
             $ID = $data['data']['InfoList'][0]['FileId'];
             $result = array(
                 'code' => 200,
@@ -51,7 +52,6 @@ function start($link = 0, $password = '')
                 'msg' => "解析成功",
                 'docname' => $data['data']['InfoList'][0]['FileName']
             );
-            // 文件夹
             $data = file_get_contents("https://www.123pan.com/b/api/share/get?limit=100&next=1&orderBy=share_id&orderDirection=desc&shareKey=$share_key&SharePwd=$password&ParentFileId=$ID&Page=1", false);
             $data = json_decode($data, true);
             if ($data['code'] == 5103) {
@@ -63,7 +63,6 @@ function start($link = 0, $password = '')
         }
         $length = $data['data']['Len'];
         // 2. 循环Length遍
-
         for ($i = 1; $i <= $length; $i++) {
             // 获取InfoList
             $infoList = $data['data']['InfoList'][$i - 1];
@@ -79,9 +78,9 @@ function start($link = 0, $password = '')
                 'ShareKey' => $share_key,
                 'Size' => $Size
             );
-            $data = post('https://www.123pan.com/b/api/share/download/info', $post_data);
-            $data = json_decode($data, true);
-            $DownloadURL = $data['data']['DownloadURL'];
+            $dataA = post('https://www.123pan.com/b/api/share/download/info', $post_data);
+            $dataA = json_decode($dataA, true);
+            $DownloadURL = $dataA['data']['DownloadURL'];
             $DownloadURL1 = get_redirect_url($DownloadURL);
             array_push($result['data'], array(
                 "name" => $FileName,

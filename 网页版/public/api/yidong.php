@@ -56,39 +56,78 @@ function start($link = 0, $password = '')
     // 请求
     $response = get("https://www.ecpan.cn/drive/fileextoverrid.do?chainUrlTemplate=$link&data=$data&parentId=-1");
     $json = json_decode($response, true);
+    // 获取数据
     $fileName = $json["var"]["chainFileInfo"]["jsonFileList"][0]["fileName"];
     $fileSize = $json["var"]["chainFileInfo"]["jsonFileList"][0]["fileSize"];
-    // 是否是加密连接
-    $downloadLink = $json["var"]["chainFileInfo"]["jsonFileList"][0]["downloadUrl"];
-    if ($password != NULL) {
-        // 获取数据
-        $cloudpFileList = $json["var"]["chainFileInfo"]["cloudpFileList"];
-        // 构建cloudpFileList
-        $cloudpFileList[0]['downloadUrl'] = NULL;
+    $cloudpFileList = $json["var"]["chainFileInfo"]["cloudpFileList"];
+    // 获取信息
+    $groupId = $cloudpFileList[0]["groupId"];
+    $shareId = $json["var"]["chainFileInfo"]["shareId"];
+    // 是否是文件夹
+    if ($cloudpFileList == NULL || $cloudpFileList == '') {
+        //// 是文件夹
         // 获取信息
-        $groupId = $cloudpFileList[0]["groupId"];
-        $shareId = $json["var"]["chainFileInfo"]["shareId"];
-        // 构建POST请求
-        $postdata = array(
-            'extCodeFlag' => 1,
-            'extractionCode' => $password,
-            'groupId' => $groupId,
-            'isIp' => 0,
-            'shareId' => $shareId,
-            'fileIdList' => $cloudpFileList
-        );
-        // $dlData = post("https://www.ecpan.cn/drive/sharedownload.do", $postdata);
-        $header = array("Content-Type:multipart/x-www-form-urlencoded");
-        $dlData = curlPost("https://www.ecpan.cn/drive/sharedownload.do", $postdata, 5, $header, 'json');
+        $cloudpFile = $json["var"]["chainFileInfo"]['cloudpFile'];
+        $appFileID = $cloudpFile['appFileId'];
+        $groupId = $cloudpFile['groupId'];
+        $rootUsn = $cloudpFile['rootUsn'];
+        //构建GET请求
+        $response = get("https://www.ecpan.cn/drive/fileextoverrid.do?rootUsn=$rootUsn&data=$data&shareId=$shareId&parentId=$appFileID&extCodeFlag=0&chainUrlTemplate=$link");
+        $json = json_decode($response, true);
+    }
+    // 获取文件个数
+    $isFinish = FALSE;
+    $Length = 0;
+    while (!$isFinish) {
+        if ($json['var']['chainFileInfo']['cloudpFileList'][$Length]['appFileId'] == NULL) {
+            $isFinish = TRUE;
+        }
+        $Length++;
+    }
+    $Length = $Length - 2;
+    $cloudpFileList = $json['var']['chainFileInfo']['cloudpFileList'];
+    for ($i = 0; $i <= $Length; $i++) {
+        // 构建cloudpFileList
+        $tempCloudpFileList = $cloudpFileList[$i];
+        $tempCloudpFileList['downloadUrl'] = NULL;
+        //// 请求下载链接
+        // 是否是加密链接
+        if ($password != NULL) {
+            // 构建POST请求
+            $postdata = array(
+                'extCodeFlag' => 1,
+                'extractionCode' => $password,
+                'groupId' => $groupId,
+                'isIp' => 0,
+                'shareId' => $shareId,
+                'fileIdList' => array($tempCloudpFileList)
+            );
+            $header = array("Content-Type:multipart/x-www-form-urlencoded");
+            $dlData = curlPost("https://www.ecpan.cn/drive/sharedownload.do", $postdata, 5, $header, 'json');
+        } else {
+            // 构建POST请求
+            $postdata = array(
+                'extCodeFlag' => 0,
+                'groupId' => $groupId,
+                'isIp' => 0,
+                'shareId' => $shareId,
+                'fileIdList' => array($tempCloudpFileList)
+            );
+            // print(json_encode($postdata));
+            $header = array("Content-Type:multipart/x-www-form-urlencoded");
+            $dlData = curlPost("https://www.ecpan.cn/drive/sharedownload.do", $postdata, 5, $header, 'json');
+        }
         $json1 = json_decode($dlData, true);
         $downloadLink = $json1["var"]["downloadUrl"];
+        // 输出
+        $fileName = $tempCloudpFileList["fileName"];
+        $fileSize = $tempCloudpFileList["fileSize"];
+        array_push($result['data'], array(
+            "name" => $fileName,
+            "size" => $fileSize,
+            "url" => $downloadLink
+        ));
     }
-    // 输出
-    array_push($result['data'], array(
-        "name" => $fileName,
-        "size" => $fileSize,
-        "DownloadURL" => $downloadLink
-    ));
     return $result;
 }
 
@@ -99,12 +138,6 @@ $result = start($link, $password);
 if ($redirect == NULL) {
     header('Access-Control-Allow-Origin:*');
     header('Content-Type:application/json');
-    if ($result['data'][0]['DownloadURL'] == NULL) {
-        $result = array(
-            "code" => 202,
-            "msg" => '链接错误/失效/解析失败',
-        );
-    }
     echo json_encode($result, JSON_NUMERIC_CHECK | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     exit();
 } else {
