@@ -125,7 +125,7 @@ function start($link = 0, $password = '')
         array_push($result['data'], array(
             "name" => $fileName,
             "size" => $fileSize,
-            "url" => $downloadLink
+            "DownloadURL" => $downloadLink
         ));
     }
     return $result;
