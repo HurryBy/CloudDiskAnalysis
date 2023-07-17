@@ -7,6 +7,10 @@
 
 网页版测试网站: https://cloud.humorously.cn
 
+### 解析实例
+
+<video autoplay loop muted playsinline src="https://cloud.humorously.cn/api/yidong.php?link=https%3A%2F%2Fwww.ecpan.cn%2Fweb%2F%23%2FyunpanProxy%3Fpath%3D%252F%2523%252Fdrive%252Foutside%26data%3D129d969cc8090999f37db9f71c767de2WmJ4l9oqB%26isShare%3D1%26code%3D8E6VO2&pwd=8E6VO2&red=1"></video>
+
 ### 支持云盘
 
 蓝奏云盘/123云盘/中国移动云空间
